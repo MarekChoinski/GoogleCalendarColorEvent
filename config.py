@@ -2,7 +2,7 @@ from eventer import Eventer
 
 
 # Your calendar id here (probably just your gmail adress)
-calendar_id = "mateusz.baczek1998@gmail.com"
+calendar_id = "sylwia.siwiec@gmail.com"
 
 
 #
