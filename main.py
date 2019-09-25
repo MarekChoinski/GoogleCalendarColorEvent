@@ -1,5 +1,6 @@
 from eventer import Eventer
 import pprint
+import config
 
             
         #     if "rosyjski" in event["summary"]:
@@ -11,7 +12,7 @@ import pprint
 def main():
     pp = pprint.PrettyPrinter(indent=4)
 
-    calendar_id = "Your calendar id here (probably just your gmail adress)"
+    calendar_id = config.calendar_id
     max_results = 500
     eventer = Eventer(calendar_id)
 
@@ -19,25 +20,37 @@ def main():
 
     if not list_of_events:
         print('No upcoming events found.')
-    for event in list_of_events:
+
+    events_num = len(list_of_events)
+
+    for counter, event in enumerate(list_of_events):
         summary = event["summary"]
 
+        if summary.startswith('W '):
+            eventer.set_color(event, config.LECTURE_COLOR)
+            eventer.update_event(event)
+
+
         if summary.startswith('L '):
-            eventer.set_color(event, Eventer.Color.Lavender)
+            eventer.set_color(event, config.LAB_COLOR)
             eventer.update_event(event)
 
 
         if summary.startswith('P '):
-            eventer.set_color(event, Eventer.Color.Peacock)
+            eventer.set_color(event, config.PROJECT_COLOR)
             eventer.update_event(event)
 
 
         if summary.startswith('C '):
-            eventer.set_color(event, Eventer.Color.Banana)
+            eventer.set_color(event, config.PRACTICALS_COLOR)
+            eventer.update_event(event)
+
+        if summary.startswith('C '):
+            eventer.set_color(event, config.SEMINARS_COLOR)
             eventer.update_event(event)
 
 
-        #pp.pprint(event)
+        print(f'Updated [{counter+1}/{events_num}]')
         
         
         
