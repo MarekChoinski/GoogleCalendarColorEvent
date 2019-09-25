@@ -3,7 +3,11 @@
 
 Colour the plan you've imported from JSOS to your Google Calendar so that the events colors reflect the type of the activities yadda yadda
 
-# Howto
+Result:
+![](plan.png)
+
+
+## Howto
 ```bash
 git clone https://github.com/MarekChoinski/GoogleCalendarColorEvent.git
 cd GoogleCalendarColorEvent
@@ -31,4 +35,8 @@ python main.py
 ```
 
 
+## Known ~~bugs~~ features
+### `"Rate Limit Exceeded"`
+You should be fine, the script has probably scanned all the way through this semester's events anyway.
 
+If you can see that some of your events werent coloured, check `main.py:21` to skip some of the already coloured events and continue updating from the non-coloured ones.

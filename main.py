@@ -18,6 +18,12 @@ def main():
 
     list_of_events = eventer.get_upcoming_events(max_results)
 
+    # Uncomment to skip the first 30 events
+    # Or change the 30 to something that fits you better
+    # Use in case of `Rate Limit Exceeded`
+    # To colour the remaining events
+    #list_of_events = list_of_events[30:]
+
     if not list_of_events:
         print('No upcoming events found.')
 
