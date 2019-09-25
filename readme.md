@@ -3,6 +3,10 @@
 
 Colour the plan you've imported from JSOS to your Google Calendar so that the events colors reflect the type of the activities yadda yadda
 
+Result:
+![](plan.png)
+
+
 ## Howto
 ```bash
 git clone https://github.com/MarekChoinski/GoogleCalendarColorEvent.git
