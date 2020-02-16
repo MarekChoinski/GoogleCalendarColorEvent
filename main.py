@@ -51,7 +51,7 @@ def main():
             eventer.set_color(event, config.PRACTICALS_COLOR)
             eventer.update_event(event)
 
-        if summary.startswith('C '):
+        if summary.startswith('S '):
             eventer.set_color(event, config.SEMINARS_COLOR)
             eventer.update_event(event)
 
